@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="ru">
+        <title>Пятая страница</title> 
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <!--Рассмотрена оптимизация изображения для кроссплатформенности-->
+        <!--PNG и GIF исп. если изобрежения однотонные, PNG чаще исп. к тем из них, которые имеют прозрачность или нечеткие углы, а GIF- для анмиованых изобр. JPEG - для многоконтрастных изобр. Но сейчас есть более высокопроизводительные форматы- WEBP и AVIF(AF1)-->
+        <h1>Фото</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><!--img- вводит изображение через src, srcset-вводит доп. изображения , которые выполняються пр выполнении условий (ширина экрана(900w), плотность пикселей (2x));(Более подробно про img source и picture смотреть folder photo)-->
+        <img 
+           class="image" 
+           src="imagine/blackman.png" 
+           alt="Big"
+           title="Че палишь"
+           srcset="imagine/blackmanmini.png 800w, imagine/blackmanultramini.png 400w, imagine/blackman.png 1000w"
+        >
+        <picture><!--позволяет изменять изображения на другие при выполнении условий media.source идут всегда первыми-->
+            <source
+             type="image/png"
+             srcset="imagine/cutblackman.png, #.png 2x"
+             media="(max-width: 800px)"
+            />
+          <img 
+             class="image" 
+             src="imagine/blackman.png" srcset="#.png. 2x"
+             loading="lazy" 
+           /><!--loading:lazy- загружает изображение только тогда, когда пользователь доскроливает до него -->
+        </picture>
+        <img src="imagine/blackman.png" alt="Big"
+           srcset="imagine/namepicture.png 2x"/><!--Допустим есть изображение для фулл ейчди и изображение для мониторв 4к, тогда мы указываем в  img srcset с изор. для мониторов 4к и прописываем 2х(если срабатывает ограничение - плотность пиксилей в 2раза больше, тогда подключаеться srcset )-->
+         <figure><!--связывает изображение или любой ругой элемент с подписью (figurecaption)-->
+            <img src="imagine/kitchen.png" alt="Кухня">
+            <figcaption>Моя кухня</figcaption>
+         </figure>
+         
+
+         <img src="imagine/kitchen.png" alt="Кухня" usemap="#mapkitchen">
+         <map name="mapkitchen">
+            <area 
+               shape="rect" 
+               coords="640,8,895,257" 
+               href="https://treba-mebli.com.ua/kuhonnyj-modul-verhnij-everest-eko-600-yasen-shimo-svetlyj-belyj-60h30h58-sm-evr-2799-ru-uk?utm_source=googleads&gad_source=1&gclid=Cj0KCQjw-5y1BhC-ARIsAAM_oKkvq7zX0mfLu_Lziyh3v2-la4HCwxvlWNTChWrCU03rRK9D1dNV6mEaAtoaEALw_wcB" 
+               alt="Тумбочка"
+               target="_blank">
+            <area 
+              shape="circle" 
+              coords="530,341,22" 
+              href="https://sweetkvit.com/iskusstvennye-frukty-nabor-12-sht?gclid=Cj0KCQjw-5y1BhC-ARIsAAM_oKmLLS5d2EMf5sNTuxQKpPO8FJmclIoi3FlcsklJ0dM1Icmb70njrfoaAhxLEALw_wcB" 
+              alt="Фрукты"
+              target="_blank">
+            <area 
+               shape="poly" 
+               coords=" " 
+               href="https://art-mebli.com/product/stilets-nika-kukhonnyy-dlya-kafe-bariv-dlya-kukhni-yidalni/?attribute_pa_kolir=chornyy&utm_source=google&utm_campaign=feed_art_ua&utm_medium=cpc&utm_term=39651&gad_source=1&gclid=Cj0KCQjw-5y1BhC-ARIsAAM_oKkGUHjDjQ8EH4FdCwG3hRtRsjg-IgvAfTJBwA6YY4ZcAUAT9YU8ZOUaAk2KEALw_wcB" 
+               alt="Стул"><!--Коорд. доб. так же как и для rect, только много точек-->
+            <area shape="default" coords="" href="" alt="">
+         </map><!--к area можно применить download атрибут-->
+    </body>
+    <!--Aydio имеет те же настройки что и  video (смотреть video1 video2)-->
+</html>

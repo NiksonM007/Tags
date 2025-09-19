@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <!--Атрибут действия в теге <form> определяет обработчик формы, который будет обрабатывать отправленные данные формы. Данные 
+            формы отправляются в обработчик на стороне сервера или скрипт.
+            autocapitalize-загалвные буквы: none, sentences(каждое предложение), words(каждое слово), characters(каждая буква)
+            autocomplete- Указує, чи можуть браузер автоматично заповнювати значення елементів введення за замовчуванням.
+            name- название формы, должно быть уникальным для каждой формы-->
+        <!-- method: get- для маленьких простых форм; post-для больших форм, особенно если есть загрузка файла на сервер и необхрдимо сохранить данные в бд.
+             novalidate- не проверять форму (может быть переопределеноо кнопкой отсылки формы)
+             target- где открыть результат формы  -->
+        <form action="url_куда_отправляеться_форма(серверная часть)"
+        autocapitalize="sentences"
+        autocomplete=""
+        name="uniq_name"
+        method="get"
+        novalidate
+        target="_blank"
+        >
+
+        <label for="text1">Введите текст</label><!--Связывает метку и элемент іnput. Можно так размещать, а можно input внутри самого элемента label но без атрибута for тогда-->
+        <input id="text1"
+               type="text" 
+               name="username" 
+               size="10" 
+               maxlength="15"
+               minlength="=6"
+               value="Че палишь"
+               pattern="[a-z]{4,8}"
+               placeholder="Стер? Теперь пиши" 
+               spellcheck
+               required
+               dir="rtl"
+               dirname="comment-direction"
+               list="datalist1"/>
+               <datalist id="datalist1"><!--id-связывает input через list. Типи month , week , date , time і datetime-local можуть показувати інтерфейс, який дозволяє зручно вибирати дату й час. -->
+                <option value="Шоколад"></option>
+                <option value="Чай"></option>
+                <option value="Мед"></option>
+                <option value="Цветы"></option>
+
+               </datalist> <!--input вводит элемент формы, type определяет тип элемента
+        (текст, пароль, и.д.), name-идентифицирует элемент формы и его значение при отправке данных на сервер, size- устаревший атрибут
+        для определения ширины видимого поля, сейчас исп. каскадные таблицы для этого, maxlrngth- определяет максимальную длинну
+        для вводимого текста; value-определяет начальное значение введенное в поле; list-привязка к datalist; pattern-вводит пример ввода, который будет валидным(Наведений нижче приклад обмежує значення 4-8 символами та вимагає, щоб воно містило лише малі літери.); placeholder-тест в пустом поле; readonly-только для чтения; spellcheck- проверка орфографии; autocorrect- для браузера Safarri позволяет на ходу исправлять написанный текст; required- обязательно для ввода. dirname и dir - определяют направленность текста-->
+            <br/>
+
+        <label>
+            Введите пароль
+        <input 
+            type="password" 
+            name="password" 
+            size="9" 
+            maxlegth="9" 
+            required="required" 
+            autocomplete="current-password"
+            inputmode="numeric"/><!--Для обмена важными конфединциальными данными необходимо
+        настроить серевер таким образом чтобы он обменивался данными с пользовательским комп. по криптографическому протоколу SSL
+        required исп. для валидации введеных данных, обычно исп. с помощью джавы для поддержки в старых версиях браузера.
+        Он проверяет данные на стороне веб сервера; current-password- позволяет браузеру вводиь уже известный пароль; inputmode-определяет какой текст будет вводиться в поле, напримермnumeric-автоматом переключит на телефоне клавиатуру на цифровую-->
+        </label>
+
+            <br>
+        <label for="story">Tell us your story:</label>
+
+        <textarea id="story" 
+                  name="story" 
+                  rows="5" 
+                  cols="33"
+                  autocapitalize
+                  autocomplete
+                  autofocus
+                  placeholder  
+                  required
+                  >
+        It was a dark and stormy night...
+        </textarea><!--Вводит текстовое поле для написания
+        большого коментария, атрибуты cols и rows задает ширину и высоту поля, но лучше исп.CSS для этого; disabled в отличии readonly полностью отключает элемент, даже на сервер не отсылаеться; aytofocus-при загрзке страницы , фокус сразу переместиться на данный элемент, только 1 элемент может иметь этот атрибут;-->
+        </form>
+        <br>
+        <form id="form4" method="get" action="https://www.example.com/submit"></form>
+            <textarea form="form4" 
+                      name="text12345" 
+                      dir="auto" 
+                      dirname="comment-direction" 
+                      wrap="soft">سيب
+            </textarea>
+        <!-- dirname-напрааление текста; form-определяет к какой форме относиться данный элемент, позволяя азмещать его влюбрм месте на странице; wrap- как переносятьс строки при отсылке на сервер данных элемента -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <fieldset><!--Группирует элементы сбора данных. Доступны такие атрибуты: disabled- отключает данные элементы формы, form- к какой форме относится, name-имя группы групп элементов упр.-->
+            <legend>Select a maintenance drone:</legend><!--Вводит заголовок формы-->
+          
+            <div>
+              <input type="radio" id="huey" name="drone" value="huey" checked />
+              <label for="huey">Huey</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="dewey" name="drone" value="dewey" />
+              <label for="dewey">Dewey</label>
+            </div>
+          
+            <div>
+              <input type="radio" id="louie" name="drone" value="louie" />
+              <label for="louie">Louie</label>
+            </div>
+          </fieldset>Рок<!--radio вводит переключатели, из списка можно 
+        только один выбрать, value устанавливает значение выбранного переключателя, у каждого должно быть уникальным внутри группы
+        checked - какой вариант выбран по умолчанию (для возможности ничего не выбрать исп. флажки, а не переключатели)-->
+      <br />
+      <fieldset>
+        <legend>Choose your monster's features:</legend>
+      
+        <div>
+          <input type="checkbox" id="scales" name="scales" checked /><!--checkbox вводит флажки-->
+          <label for="scales">Scales</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="horns" name="horns" />
+          <label for="horns">Horns</label>
+        </div>
+      </fieldset>
+
+
+      <label for="dino-select">Choose a dinosaur:</label>
+      <select id="dino-select"
+              name="pets"
+              size="6"
+              multiple><!--дАННЫЙ ЭЛЕМЕНТ ПОДОБН ПЕРЕКЛЮЧАТЕЛЯМ, НО УДОБНЕЕ ЕСЛИ СПИСОК ВАРИАНТОВ СЛИШКОМ ДЛИННЫЙ Доступные отдельные атрибуы:autocomplete, autofocus, disabled, form-->
+        <optgroup label="Theropods"><!--группирует  варинаты ответов. Атрибуты: diasbled, label-->
+          <option>Tyrannosaurus</option><!--Вводит один из вариантов ответов-->
+          <option selected>Velociraptor</option><!--Выбиаерт данный вариант ответа-->
+          <option disabled>Deinonychus</option><!--Отключает данный вариант ответа-->
+        </optgroup>
+        <optgroup label="Sauropods">
+          <option>Diplodocus</option>
+          <option>Saltasaurus</option>
+          <option>Apatosaurus</option>
+        </optgroup>
+      </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+      <form action="URL адресс страницы получателя отправленных данных на сервер" method="post">
+         <label for="avatar">Choose a profile picture:</label>
+         <input type="file" 
+                id="avatar" 
+                name="avatar" 
+                accept="image/png, image/jpeg, video/*" 
+                multiple/><!--позволят загружать файлы. Атрибут accept-определяет какие форматы можно загрузить(video/*-любое видео), capture-определяет аудио/видео устройство для записи данных-->
+      </form>
+      <br />
+      <input type="submit" 
+             name="download"
+             value="Загрузить" 
+             formaction="urlадресс куда отправить заполненную форму(имеет приоритет над action(form))"
+             formenctype="application/x-www-form-urlencoded"
+             formmethod="post"
+             formnovavalidate
+             formtarget="_blank"
+             accesskey="y"/><!--type="submit" вводит кнопку именно отправки данных формы, атрибут 
+      name необязателен в данном случае,value выводит текст кнопки. formenctype-определяет способ кодировки отправляемых данных, formnovavalidate-не проверять данные, accesskey-определяет гарячую клавишу.formmethod="dialog"- закрывет диалоговое окно.-->
+
+      <p>Sign in to your account:</p>
+
+      <div>
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" />
+      </div>
+      <input type="image" 
+             id="image" 
+             alt="Login" 
+             src="upload.png" 
+             formaction=""
+             formenctype=""
+             formmethod=""
+             formnovavalidate
+             formtarget="_blank"
+             width="100" hight="20"/><!--Кнопка созданная изображением. src-путь к изобр, alt-алтернативный текст если изобр не загрузилось-->
+
+
+       <input type="button" value="Add to favorites" /><!--Доб. кнопку. которую можно запрограмировать на выполнение любой функции. ЛУчше исп элемент button-->
+       <form id="form657" action="URL адресс страницы получателя отправленных данных на сервер"></form>
+       <div popover id="my-popover">Greetings, one and all!</div><!--popover- всплывающий элемент. Елементи Popover приховані за допомогою , display: none поки не будуть відкриті за допомогою елемента виклику/керування (тобто <button>або <input type="button">з popovertargetатрибутом) або HTMLElement.showPopover()виклику.
+
+        Коли відкрито, спливаючі елементи відображатимуться над усіма іншими елементами у верхньому шарі , і на них не впливатимуть батьківські елементи position чи overflowстилі.
+        
+        Атрибут Popover може мати значення "auto"(за замовчуванням) або "manual". Спливні вікна, які мають autoстан, можна "легко відхилити", вибравши за межами області спливаючих зображень, і, як правило, можна відображати на екрані лише одне спливаюче зображення за раз. Навпаки, manualспливаючі вікна завжди мають бути явно приховані, але допускати такі випадки використання, як вкладені спливні вікна в меню.-->
+        <button autofocus
+                form="form657"
+                formaction=""
+                formmethod=""
+                formenctype=""
+                formnovalidate
+                formtarget=""
+                name="button"
+                value="use"
+                type="button"
+                popovertarget="my-popover"
+                popovertargetaction="toggle">
+                     <img src="add.png" alt="добавить" width="25" height="24" />Добавить 
+        </button><!--Добавляет кнопку, в которой можно сочитать и текст и изображение. autofocus- при загрузке стр. происходит фокусировка на данном элементе. Атрибуты:name and value- значения, которые отправляеються при нажати кнопки для отправки данных, как часть данных. popovertarget- привязка к всплывающему окну через id, popovertargetaction - определяет действие при нажатии на кнопку. type-тип кнопки(submit-отправка, reset-скидывет значения до по-умолчанию)-->
+
+
+        <input type="hidden" name="zakladka" value="tekst_pesni" /><!--Добавляет на страницу скрытый от обычого пользователя элемент,
+        но его значение отсылаеться на сервер. використовуються для зберігання та надсилання маркерів безпеки або секретів з метою підвищення безпеки веб-сайту. Основна ідея полягає в тому, що якщо користувач заповнює конфіденційну форму, таку як форма на своєму веб-сайті банку, для переказу грошей на інший рахунок, секрет, який йому буде надано, підтвердить, що він є тим, за кого себе видає, і що вони використовують правильну форму для подання запиту на перенесення.-->
+        <form>
+            <div>
+              <label for="title">Post title:</label>
+              <input type="text" id="title" name="title" value="My excellent blog post" />
+            </div>
+            <div>
+              <label for="content">Post content:</label>
+              <textarea id="content" name="content" cols="60" rows="5">
+          This is the content of my excellent blog post. I hope you enjoy it!
+              </textarea>
+            </div>
+            <div>
+              <button type="submit">Update post</button>
+            </div>
+            <input type="hidden" id="postId" name="postId" value="34657" />
+          </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <label for="depart">Дата отправки</label>
+           <input id="depart" 
+                  type="date" 
+                  name="depart" 
+                  value="2017-06-01"
+                  max="2025-11-11"
+                  min="2023-11-11"
+                  step="4"/><!--date вводит выбор даты. value-начальное значение. step-интервал в днях.-->
+        <input type="email" 
+               name="email" 
+               pattern=".+@example\.com" 
+               size="30" 
+               required 
+               list=""
+               maxlength=""
+               minlength=""
+               multiple
+               placeholder=""
+               readonly
+               value=""
+               /><!--Для запроса эл почты. Все атрибуты ранее расмотрены-->
+           <input type="submit" value="отправить" /> 
+        <br />
+
+
+
+
+
+        <input type="url" name="site" /><!--Для запроса url адресса-->
+           <input type="submit" value="отправить" />
+        <form>
+            <label for="url">Enter an https:// URL:</label>
+            <input type="url"
+                   name="url" 
+                   id="url" 
+                   placeholder="https://example.com" 
+                   pattern="https://.*" 
+                   size="30" 
+                   required 
+                   list=""
+                   maxlength=""
+                   minlength=""
+                   readonly
+                   spellcheck="true"/><!--spellcheck- проверка орфографии-->
+        </form>
+        
+        
+        
+        <form>
+            <p>Поиск:</p>
+            <input type="search" 
+                   name="search" 
+                   placeholder="Купить дилдо"
+                   list=""
+                   maxlength=""
+                   minlength=""
+                   spellcheck="true"
+                   autocorrect="on"/><!--Вводит поиск, атрибут placeholder - задает текст, 
+            который отображаеться до того как что-то будет напечатано в поле autocorrect- автоиспралкение  -->
+            <input type="submit" value="Поиск" />
+        </form>
+
+
+
+
+
+
+        <form action="action_page.php" method="get"></form>
+  <form>
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username..." id="username">
+    <br>
+    <label for="email">Your email</label>
+    <input type="email" placeholder="example@gmail.com" id="email">
+    <br>
+    <p><label for="password">Password</label>
+    <input type="password" id="password"></p>
+    <br>
+    <label for="search">Search</label>
+    <input type="search"  placeholder="search" id="search">
+    <br>
+    <label for="url">Text url adress</label>
+    <input type="url" placeholder="Paste url" id="url">
+    <br>
+    <input type="number" id="number">
+    <br>
+    <input type="tel" placeholder="05473753">
+    <br>
+    <input type="date">
+    <br>
+    <input type="datetime-local">
+    <br>
+    <input type="month">
+    <br>
+    <input type="week">
+    <br>
+    <input type="time">
+    <br>
+    <input type="color">
+    <br>
+    <input type="range">
+    <br>
+    <input type="reset"><!--збрасывает все настройки-->
+    <br>
+
+
+
+    <label for="ice-cream-choice">Choose a flavor:</label>
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+    <datalist id="ice-cream-flavors"><!--вводит выбор из нескольких вводных параметров-->
+      <option value="Chocolate"></option>
+      <option value="Coconut"></option>
+      <option value="Mint"></option>
+      <option value="Strawberry"></option>
+      <option value="Vanilla"></option>
+    </datalist>
+    <br>
+    <label for="cars">Choosr a car:</label>
+    <select name="cars" id="cars">
+        <optgroup label="Japanes Cars">
+            <option value="mazda">Mazda</option>
+            <option value="honda">Honda</option>
+            <option value="subru">Subaru</option>
+            <option value="nissan">Nissan</option>
+        </optgroup>
+        <optgroup label="German Cars">
+            <option value="mersedes">Mersedes</option>
+            <option value="audi">Audi</option>
+            <option value="porshe">Porshe</option>
+            <option value="bmw">BMW</option>
+        </optgroup>
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <p>Я нкита</p>
+<p>Я нкита</p>
+<p>Я нкитаммммммммммммммммммммммммммммммммммммммммммммммммммм</p>
+<p>Я нкита</p>
+<dialog open><!--Вводит диалоговое окно.Елемент HTML <dialog>використовується для створення як модальних, так і немодальних діалогових вікон. Модальні діалогові вікна переривають взаємодію з рештою сторінки, будучи інертними, тоді як немодальні діалогові вікна дозволяють взаємодіяти з рештою сторінки. Можно настроить для связки с формой. Для відображення елемента слід використовувати JavaScript <dialog>. Використовуйте .showModal()метод для відображення модального діалогу та .show()метод для відображення немодального діалогу. Діалогове вікно можна закрити за допомогою .close()методу або за допомогою dialog методу під час надсилання <form>вкладеного <dialog>елемента. Модальні діалоги також можна закрити, натиснувши клавішу Esc-->
+  <p>Greetings, one and all!</p>
+  <form method="dialog" action="../Basic_body_document/Basic_document_1.html">
+    <button >>OK</button>
+  </form>
+</dialog>
+<p>Я нкита</p>
+<p>Я нкита</p>
+<p>Я нкитамммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм</p>
+<p>Я нкита</p>
+<p>Я нкита</p>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Semnatic navigation</title>
+    </head>
+    <body>
+
+
+
+        <header><!--Обозначает заголовок, который может иметь логотип,заголовок, имя автора, элемент навигации и т.д. представляє вступний вміст, як правило, групу вступних або навігаційних посібників. Він може містити деякі елементи заголовка, а також логотип, форму пошуку, ім’я автора та інші елементи.  Зазвичай він містить логотип, назву компанії, функцію пошуку та, можливо, глобальну навігацію чи слоган. Зазвичай він розташований у верхній частині сторінки. В іншому випадку він є в section дереві доступності та зазвичай містить заголовок розділу (елемент an h1– h6) і необов’язковий підзаголовок, але це не обов’язково.-->
+            <h1>Третий урок</h1>
+             <div class="warning"><!--div исп. как контейнер для контента содержимое которого можно менять как 1 элемент с помощью css, базовый контейнер, есль более гибкие контейнеры с семнатической точки зрения. Атрибут id- определяет отдельный элемент,class- может присваиватся несколькм элементам. Оба исп. для стилизации css-->
+              <img src="lesson_2-3/lesson_3/photo_2024-07-15_09-02-35.jpg" alt="Balbeska and konchito" height="400" />
+              <p>Sexy baby</p>
+            </div>
+          </header>
+          <header>
+            <h1>Main Page Title</h1>
+            <img src="mdn-logo-sm.png" alt="MDN logo" />
+          </header>
+          
+
+
+
+
+          <main><!--Определяет основной текст страницы (контент).  представляє основний вміст документа . Область основного вмісту складається з вмісту, який безпосередньо пов’язаний із основною темою документа чи основною функціональністю програми або розширює її-->
+            <p>
+              Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Antarctica.
+            </p>
+          
+            <p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
+          </main>
+
+
+
+          <footer><!--представляє нижній колонтитул.Зазвичай містить інформацію про автора розділу, дані про авторські права або посилання на відповідні документи-->
+            <p>© 2018 Gandalf</p>
+          </footer>
+
+
+          <header>
+            <h1>Movie website</h1>
+            <search> <!-- це контейнер, що представляє частини документа або програми з елементами керування формою або іншим вмістом, пов’язаним із виконанням операції пошуку чи фільтрації. Елемент семантично визначає призначення вмісту елемента як можливості пошуку або фільтрації. Функції пошуку або фільтрації можуть стосуватися веб-сайту чи програми, поточної веб-сторінки чи документа або всього Інтернету. Елемент <search>визначає searchорієнтир. Це усуває необхідність додавання role=searchдо <form>елемента. -->
+              <form action="./search/">
+                <label for="movie">Find a Movie</label>
+                <input type="search" id="movie" name="q" />
+                <button type="submit">Search</button>
+              </form>
+            </search>
+          </header>
+
+
+
+
+
+          <h1>Choosing an Apple</h1>
+          <section>
+            <h2>Introduction</h2>
+            <p>This document provides a guide to help with the important task of choosing the correct Apple.</p>
+          </section>
+          <section><!--Выделяет раздел и ничего более. представляє загальний окремий розділ документа, який не має більш конкретного семантичного елемента для його представлення. Розділи завжди повинні мати заголовок, за дуже рідкісними винятками-->
+            <h2>Criteria</h2>
+            <p>
+              There are many different criteria to be considered when choosing an Apple — size, color, firmness, sweetness,
+              tartness...
+            </p>
+          </section>
+
+
+
+          <article><!--Самодостаточная композиция, которая предназначена, для независимого распространения(запись в блоге, статтья в газете/жрнале, запись на форуме и т.д.) Приклади включають: допис на форумі, статтю в журналі чи газеті, запис у блозі, картку продукту, коментар, надісланий користувачем, інтерактивний віджет чи гаджет або будь-який інший окремий елемент вмісту-->
+            <style  media="all and (max-width: 500px)">
+            article {
+              min-height: 100%;
+              display: grid;
+              grid-template-rows: auto 1fr auto;
+            }
+            
+            footer {
+              display: flex;
+              justify-content: center;
+              padding: 5px;
+              background-color: #45a1ff;
+              color: #fff;
+            }
+            </style><!--Встраивае код CSS, но лучше это делать в head с помощью link, тоже самое и со script. media- задает ограничение для применение стиля-->
+
+
+            <h1>How to be a wizard</h1>
+            <ol>
+              <li>Grow a long, majestic beard.</li>
+              <li>Wear a tall, pointed hat.</li>
+              <li>Have I mentioned the beard?</li>
+            </ol>
+          </article>
+
+
+
+
+
+
+          <p>
+            Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval
+            and adult forms.
+          </p>
+          <aside><!--представляет элемент текста, который немного связан с основным текстом, часто стилизируется под боковую панель. представляє частину документа, вміст якої лише опосередковано пов’язаний з основним вмістом документа. -->
+            <style>aside {
+              width: 40%;
+              padding-left: 0.5rem;
+              margin-left: 0.5rem;
+              float: right;
+              box-shadow: inset 5px 0 5px -5px #29627e;
+              font-style: italic;
+              color: #29627e;
+            }
+            
+            aside > p {
+              margin: 0.5rem;
+            }</style>
+            <p>The Rough-skinned Newt defends itself with a deadly neurotoxin.</p>
+          </aside>
+          <p>
+
+
+
+
+
+            <nav class="crumbs"><!--nav исп. для раздела навигации, содержания и т.д. Теже функци что и у div. представляє розділ сторінки, метою якого є надання навігаційних посилань у межах поточного документа або до інших документів. Типовими прикладами розділів навігації є меню, зміст та покажчики.-->
+              <style>nav {
+                border-bottom: 1px solid black;
+              }
+              
+              .crumbs ol {
+                list-style-type: none;
+                padding-left: 0;
+              }
+              
+              .crumb {
+                display: inline-block;
+              }
+              
+              .crumb a::after {
+                display: inline-block;
+                color: #000;
+                content: '>';
+                font-size: 80%;
+                font-weight: bold;
+                padding: 0 3px;
+              }</style>
+              <ol>
+                <li class="crumb"><a href="base_html.html">Lesson 1</a></li>
+                <li class="crumb"><a href="lesson_2-3/text_html.html">Lesson 2</a></li>
+                <li class="crumb">Lesson 3</li>
+              </ol>
+            </nav>
+            <h1>Jump Bike 3000</h1>
+            <p>
+              This BMX bike is a solid step into the pro world. It looks as legit as it rides and is built to polish your skills.
+            </p>
+          
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+          
+            Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the
+            Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and
+            other small creatures.
+          </p>
+          <canvas></canvas><!--Исп. для рисования графики, но при помощи сценариев JS-->
+         
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <label for="fuel">Fuel level:</label>
+          <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50"></meter><!--Выводит видимый дапазон чисел-->
+          
+          <br>
+          <label for="file1234567">File progress:</label>
+          <progress id="file1234567" max="100" value="70">
+          </progress><!--По сути тоже что и meter.  відображає індикатор прогресу виконання завдання -->
+          <output for="file1234567"
+                  form="#"
+                  name=""><!--Выводит  результати обчислення або результат дії користувача. Если form, то name не нужно. Требуеться программировать JS-->
+          </output>
+          <noscript>Лох</noscript> <!--Выводит текст если какой либо из скриптов не поддерживаеться ьрвзуером пользователя-->
+          
+
+
+          <!--Арибуты
+                      inert робить наступне:
+
+Запобігає click запуску події, коли користувач натискає елемент.
+Запобігає виклику focus події, не даючи елементу отримати фокус.
+Запобігає пошуку/збігу будь-якого вмісту елемента під час будь-якого використання функції пошуку на сторінці браузера.
+Забороняє користувачам виділяти текст в елементі — подібно до використання властивості CSS user-selectдля вимкнення виділення тексту.
+Забороняє користувачам редагувати будь-який вміст елемента, який інакше можна редагувати.
+Приховує елемент і його вміст від допоміжних технологій, виключаючи їх із дерева доступності.
+html
+                      Атрибут hidden використовується, щоб вказати, що вміст елемента не повинен бути представлений користувачеві. Цей атрибут може приймати будь-яке з наступних значень:
+
+порожній рядок
+ключове слово hidden
+ключове слово until-found
+З атрибутом пов’язано два стани hidden: прихований стан і прихований, поки не знайдено .
+
+Порожній рядок або ключове слово hiddenвстановлює елемент у прихований стан. Крім того, недійсні значення встановлюють елемент у прихований стан.
+Ключове слово until-foundвстановлює елемент у стан прихованого, поки не знайдено .
+                        
+                           data-* - Глобальні атрибути утворюють клас атрибутів, які називаються користувацькими атрибутами даних , які дозволяють сценаріями обмінюватися власною інформацією між HTML і його представленням DOM .-->
+
+                           <!--enterkeyhint — це  атрибут, який визначає, яку мітку дії (або піктограму) відображати для клавіші введення на віртуальних клавіатурах.
+
+                           draggable - можно ли перетягивать элемент ? true or false
+           -->
+
+    </body>
+</html>

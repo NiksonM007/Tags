@@ -1,0 +1,210 @@
+<!DOCTYPE html> 
+<html lang="ru">
+        <title>Вторая страница</title> 
+    </head>
+    <body>
+        <table  width="400" cellpadding="10" cellspacing="5" bgcolor="#efefef" border="5"><!--Вводит таблицу, пишеться построчно.Устаревшие атрибуты ширины(width)(можно исп в th, td, table), cellpadding атрибут добавляет промежуток между границами ячеек и их содержимым, cellspacing атрибут добавляет промежуток между ячейками таблицы.bgcolor задает цвет таблицы, а border исп. с table и th для обозначения ширины границы. 
+            Сейчас это все делается с помощью каскадных таблиц-->
+            <caption>Just a table</caption><!--Вводит заголовок таблицы-->
+            <tr><!--вводит строку-->
+                  <th></th><!--Вводит пустой элемент, так же можно для других элементов таблтцы-->
+                  <th scope="col">Заголовк первого столбца</th><!--Вводит заголвок-->
+                  <th scope="col">Заголовк второго столбца</th>
+                  <th scope="col">Заголовк третего столбца</th>
+              </tr>
+              <tr><!--вводит строку-->
+                  <th scope="row">Заголовок первой строки</th><!--атрибут scope определяет к чему относиться заголовок(к ряду или столбцу)-->
+                  <td dir="rtl">Первая ячейка</td><!--вводит ячейку--><!--определяет направленность контента ячейки-->
+                  <td>Вторая ячейка</td>
+                  <td>Третья ячейка</td>
+              </tr>
+              <tr>
+                  <th scope="row">Заголовок второй строки</th>
+                  <td>Первая ячейка</td>
+                  <td>Вторая ячейка</td>
+                  <td>Третья ячейка</td>
+              </tr>
+              <tr>
+                  <th scope="row">Заголовок третей строки</th>
+                  <td>Первая ячейка</td>
+                  <td>Вторая ячейка</td>
+                  <td>Третья ячейка</td>
+              </tr>
+          </table>
+          <hr />
+
+
+
+
+
+
+
+          <h2>Пример обьеденения столбцов и рядов</h2>
+          <table width="400" cellpadding="10" cellspacing="5" bgcolor="#efefef" border="2">
+              <tr>
+                  <th></th>
+                  <th scope="col">Заголовк первого столбца</th>
+                  <th scope="col">Заголовк второго столбца</th>
+                  <th scope="col">Заголовк третего столбца</th>
+                  <th scope="col">Заголовк четвертого столбца</th>
+                  <th scope="col">Заголовк пятого столбца</th>
+              </tr>
+              <tr>
+                  <th scope="row">Заголовок первой строки</th>
+                  <td colspan="2">Первая ячейка</td><!--обьеденяет столбцы, сколько указано, 
+                  обьедененные ячейки не прописыаються в следубщем ряду-->
+                  <td>Третья ячейка</td>
+                  <td rowspan="2">четвертая ячейка</td><!--обьеденяет ряды, сколько указано, 
+                  обьедененные ячейки не прописыаються в следубщем ряду-->
+                  <td rowspan="3">пятая ячейка</td>
+              </tr>
+              <tr>
+                  <th scope="row">Заголовок второй строки</th>
+                  <td>Первая ячейка</td>
+                  <td>Вторая ячейка</td>
+                  <td>Третья ячейка</td>
+              </tr>
+              <tr>
+                  <th scope="row">Заголовок третей строки</th>
+                  <td colspan="3">Первая ячейка</td>
+                  <td>четвертая ячейка</td>
+              </tr>
+
+
+
+
+
+
+
+          </table>
+          <hr />
+          <h2>Длинная таблица</h2>
+          <table width="400" cellpadding="10" cellspacing="5" bgcolor="#efefef" border="2">
+            <thead><!--Заголовки столбцов длинной таблицы.-->
+              <tr>
+               <th>Дата</th>
+               <th>Прибыль</th>
+               <th>Расход</th>
+              </tr>
+            </thead> 
+            <tbody><!--Основное содержание-->
+              <tr>
+                <th>1 января</th>
+                <td>1533</td>
+                <td>467</td>
+              </tr>
+              <tr>
+                  <th>2 января</th>
+                  <td>4534</td>
+                  <td>6564</td>
+                </tr>
+                <tr>
+                  <th>3 января</th>
+                  <td>45445</td>
+                  <td>342</td>
+                </tr>
+                <tr>
+                  <th>4 января</th>
+                  <td>46778</td>
+                  <td>456</td>
+                </tr>
+                <tr>
+                  <th>5 января</th>
+                  <td>3664</td>
+                  <td>45445</td>
+                </tr>
+                <tr>
+                  <th>6 января</th>
+                  <td>4546</td>
+                  <td>45465</td>
+                </tr>
+            </tbody> 
+            <tfoot>
+              <tr>
+                  <td></td>
+                  <td>Сумма</td>
+                  <td>Сумма</td>
+              </tr>
+            </tfoot><!--продемонстрирован 1 из принципов ООП, 
+            а именно инкапсуляция (выделение отдельных элементов оболочкой для ограничения вмешательства из вне)-->
+          </table>
+
+
+          <table>
+            <caption>
+              Superheros and sidekicks
+            </caption>
+            <colgroup><!--Обьединяет столбцы в группы-->
+              <col style="color: brown;"/><!--Исп. только в colgroup-->
+              <col span="2" class="batman" style="color: blueviolet;" />
+              <col span="2" class="flash" />
+            </colgroup>
+            <thead>
+             <tr>
+              <td></td>
+              <th scope="col">Batman</th>
+              <th scope="col">Robin</th>
+              <th scope="col">The Flash</th>
+              <th scope="col">Kid Flash</th>
+             </tr>
+            </thead>
+            <tr>
+              <th scope="row">Skill</th>
+              <td>Smarts, strong</td>
+              <td>Dex, acrobat</td>
+              <td>Super speed</td>
+              <td>Super speed</td>
+            </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <table border="3">
+            <tr>
+              <th scope="col" rowspan="2">Symbol</th>
+              <th scope="col" rowspan="2">Code word</th>
+              <th scope="col" colspan="2" id="p" headers="i r">Pronunciation</th><!--С помощью id и headers можно связать заголовки , которые подразделяються(например от заголовка произношение выходят еще два подзаголовка) -->
+            </tr>
+            <tr>
+              <th scope="col" id="i" headers="p">IPA</th><!--Точно также связываються-->
+              <th scope="col" id="r" headers="p">Respelling</th>
+            </tr>
+            <tr>
+              <th scope="row">A</th>
+              <td>Alfa</td>
+              <td>ˈælfa</td>
+              <td>AL fah</td>
+            </tr>
+            <tr>
+              <th scope="row">B</th>
+              <td>Bravo</td>
+              <td>ˈbraːˈvo</td>
+              <td>BRAH voh</td>
+            </tr>
+            <tr>
+              <th scope="row">C</th>
+              <td>Charlie</td>
+              <td>ˈtʃɑːli</td>
+              <td>CHAR lee</td>
+            </tr>
+            <tr>
+              <th scope="row">D</th>
+              <td>Delta</td>
+              <td>ˈdeltɑ</td>
+              <td>DELL tah</td>
+            </tr>
+          </table>
+    </body>
+</html>
